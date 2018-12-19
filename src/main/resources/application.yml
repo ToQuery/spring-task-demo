@@ -1,0 +1,18 @@
+spring:
+  profiles:
+    active: dev
+## QuartzProperties
+  quartz:
+    job-store-type: jdbc
+    properties:
+      org.quartz.threadPool.threadCount: 5
+server:
+  port: 0
+
+logging:
+  level:
+    root: info
+
+
+#liquibase:
+#  change-log: classpath:db/changelog/db.changelog-master.xml
