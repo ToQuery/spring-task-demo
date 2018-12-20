@@ -1,7 +1,9 @@
 package io.github.toquery.task.test;
 
+import io.github.toquery.task.config.AppJobsListenerService;
 import io.github.toquery.task.entity.AppJobStatus;
 import io.github.toquery.task.task.AppBaseJob;
+import org.quartz.CronScheduleBuilder;
 import org.quartz.JobDetail;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
@@ -59,8 +61,19 @@ public class JobsService {
                         .startNow()
                         .withSchedule(
                                 simpleSchedule().withIntervalInSeconds(30)
+//                                CronScheduleBuilder.cronSchedule("0/5 * * * * ?")
                         )
                         .build();
+        scheduler.getListenerManager().addJobListener(new AppJobsListenerService());
+        //Listener attached to jobKey
+//        scheduler.getListenerManager().addJobListener(
+//                new HelloJobListener(), KeyMatcher.keyEquals(jobKey)
+//        );
+
+        //Listener attached to group named "group 1" only.
+        //scheduler.getListenerManager().addJobListener(
+        //	new HelloJobListener(), GroupMatcher.jobGroupEquals("group1")
+        //);
 
         scheduler.scheduleJob(job, trigger);
 

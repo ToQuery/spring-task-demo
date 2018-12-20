@@ -6,9 +6,10 @@ import org.quartz.JobExecutionException;
 import org.quartz.JobListener;
 import org.springframework.stereotype.Service;
 
+
 @Slf4j
 @Service
-public class JobsListenerService implements JobListener {
+public class AppJobsListenerService implements JobListener {
 
     @Override
     public String getName() {
@@ -17,16 +18,16 @@ public class JobsListenerService implements JobListener {
 
     @Override
     public void jobToBeExecuted(JobExecutionContext context) {
-        log.info("Job to be executed " + context.getJobDetail().getKey().getName());
+        log.info("任务 {} 要被执行 ", context.getJobDetail().getKey().getName());
     }
 
     @Override
     public void jobExecutionVetoed(JobExecutionContext context) {
-        log.info("Job execution vetoed " + context.getJobDetail().getKey().getName());
+        log.info("任务 {} 被否决 ", context.getJobDetail().getKey().getName());
     }
 
     @Override
     public void jobWasExecuted(JobExecutionContext context, JobExecutionException jobException) {
-        log.info("Job was executed " + context.getJobDetail().getKey().getName() + (jobException != null ? ", with error" : ""));
+        log.info("任务 {} 被执行了 ", context.getJobDetail().getKey().getName() + (jobException != null ? ", 但出错了 " : ""));
     }
 }
