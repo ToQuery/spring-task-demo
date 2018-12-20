@@ -1,4 +1,4 @@
-package io.github.toquery.task.entity;
+package io.github.toquery.task.demo.entity;
 
 
 import lombok.AllArgsConstructor;

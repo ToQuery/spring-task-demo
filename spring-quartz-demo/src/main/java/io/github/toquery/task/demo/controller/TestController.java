@@ -1,7 +1,7 @@
-package io.github.toquery.task.controller;
+package io.github.toquery.task.demo.controller;
 
-import io.github.toquery.task.entity.AppJobStatus;
-import io.github.toquery.task.test.JobsService;
+import io.github.toquery.task.demo.entity.AppJobStatus;
+import io.github.toquery.task.demo.service.JobsService;
 import lombok.extern.slf4j.Slf4j;
 import org.quartz.SchedulerException;
 import org.springframework.http.HttpStatus;

@@ -3,14 +3,15 @@ spring:
     active: dev
   ## QuartzProperties
   quartz:
-#    schedulerName: ${spring.application.name}-${server.port}
-#    jdbc:
-#      initialize-schema: embedded
+    # 与 quartz instanceName 相同
+    schedulerName: spring-boot-quartz-cluster-example
+    jdbc:
+      initialize-schema: always
     job-store-type: jdbc
     properties:
       # Configure Main Scheduler Properties
       # 调度器实例名称
-      org.quartz:scheduler.instanceName: spring-boot-quartz-cluster-example
+      #org.quartz:scheduler.instanceName: spring-boot-quartz-cluster-example
       # 调度器实例编号自动生成
       org.quartz.scheduler.instanceId: AUTO
 
@@ -23,7 +24,7 @@ spring:
       org.quartz.jobStore.useProperties: true
       org.quartz.jobStore.misfireThreshold: 60000
       # quartz相关数据表前缀名
-#      org.quartz.jobStore.tablePrefix: QRTZ_
+      org.quartz.jobStore.tablePrefix: QRTZ_
       # 打开集群配置
       org.quartz.jobStore.isClustered: true
       # 设置集群检查间隔20s

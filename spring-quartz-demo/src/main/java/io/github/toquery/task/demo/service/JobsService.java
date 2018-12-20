@@ -1,9 +1,8 @@
-package io.github.toquery.task.test;
+package io.github.toquery.task.demo.service;
 
 import io.github.toquery.task.config.AppJobsListenerService;
-import io.github.toquery.task.entity.AppJobStatus;
-import io.github.toquery.task.task.AppBaseJob;
-import org.quartz.CronScheduleBuilder;
+import io.github.toquery.task.demo.entity.AppJobStatus;
+import io.github.toquery.task.demo.task.AppBaseJob;
 import org.quartz.JobDetail;
 import org.quartz.JobKey;
 import org.quartz.Scheduler;
