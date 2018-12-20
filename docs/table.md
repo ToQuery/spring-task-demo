@@ -17,3 +17,5 @@
 
 # 表字段详细介绍
 
+
+[表字段详细介绍](http://www.ibloger.net/article/2650.html)
