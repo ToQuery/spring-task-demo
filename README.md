@@ -1,5 +1,7 @@
 # spring-task-demo
 
+> 基于 Spring Boot 2 的 quartz 集群定时任务，保证集群环境中同时只运行一个任务
+
 
 - spring 配置属性类`org.springframework.boot.autoconfigure.quartz.QuartzProperties`
 - spring boot 2 自动装配类`org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration`
@@ -7,6 +9,8 @@
 - 自定义Job监听事件，需要实现`org.quartz.JobListener`接口
 
 
+
+# Spring Quartz 配置
 
 
 ```yaml
@@ -52,3 +56,7 @@ spring:
       #配置是否启动自动加载数据库内的定时任务，默认true
       org.quartz.threadPool.threadsInheritContextClassLoaderOfInitializingThread: true
 ```
+
+
+
+

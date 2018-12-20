@@ -7,7 +7,7 @@ import java.util.UUID;
 
 /**
  * @author Chamith
-
+ */
 public class CustomQuartzInstanceIdGenerator implements InstanceIdGenerator {
 
     @Override
@@ -19,4 +19,4 @@ public class CustomQuartzInstanceIdGenerator implements InstanceIdGenerator {
         }
     }
 
-} */
+}
